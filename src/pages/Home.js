@@ -1,6 +1,7 @@
 // src/pages/Home.js
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const { t } = useTranslation();
@@ -8,7 +9,9 @@ function Home() {
     return (
         <div>
             <h1>{t('welcome')}</h1>
-            <a href="/login">{t('login')}</a>
+            <Link to="/login">{t('login')}</Link>
+            {' | '}
+            <Link to="/register">{t('register')}</Link>
         </div>
     );
 }

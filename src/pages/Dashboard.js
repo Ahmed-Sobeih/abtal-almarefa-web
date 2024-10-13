@@ -2,13 +2,20 @@
 import React from 'react';
 import { auth } from '../firebase';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 
-function Dashboard({ history }) {
+function Dashboard() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
-    const handleLogout = () => {
-        auth.signOut();
-        history.push('/login');
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate('/login');
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
     };
 
     return (

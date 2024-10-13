@@ -4,5 +4,6 @@
     "logout": "Log Out",
     "email": "Email",
     "password": "Password",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "register": "Register"
 }
